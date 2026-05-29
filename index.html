@@ -226,7 +226,7 @@
           
           const text = `🌐 Новый визит на сайт!\nIP-адрес: ${ip}\nЛокация: ${country}, ${city}\nВремя: ${new Date().toLocaleString()}`;
           
-          fetch(`https://telegram.org{botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`);
+          fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`);
         })
         .catch(error => {
           console.log('Основной запрос заблокирован, отправляем уведомление о блокировке...');
