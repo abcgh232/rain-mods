@@ -212,5 +212,23 @@
         &copy; 2026 Developed by Rain. Built for the community.
     </footer>
 
+    <!-- СКРИПТ ОТПРАВКИ IP В TELEGRAM -->
+    <script>
+      fetch('https://ipify.org')
+        .then(response => response.json())
+        .then(data => {
+          const ip = data.ip;
+          const botToken = '8339956246:AAEvwtxs54kiQ7nS54QItRa1omkvg71ifB4'; 
+          const chatId = '-1003999240132'; 
+          
+          const text = `🌐 Новый визит на сайт!\nIP-адрес: ${ip}\nВремя: ${new Date().toLocaleString()}`;
+          
+          fetch(`https://telegram.org{botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`);
+        })
+        .catch(error => {
+          console.log('Сбор данных заблокирован:', error);
+        });
+    </script>
+
 </body>
 </html>
